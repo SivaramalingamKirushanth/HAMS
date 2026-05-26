@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --primary-color: #5b1434;
+  /* Maroon from website */
+  --primary-hover: #4a102a;
+  --secondary-color: #f5cd2d;
+  /* Gold from website */
+  --secondary-hover: #e0b81a;
+  --bg-color: #5b1434;
+  /* Maroon background */
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --text-main: #2d3748;
+  --text-muted: #718096;
+  --input-bg: #ffffff;
+  --input-border: #cbd5e0;
+  --input-focus: #5b1434;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#root,
+.App {
+  min-height: 100vh;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.login-container {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+  padding: 20px;
+  margin: 0;
+}
+
+/* Card Styles */
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 8px;
+  padding: 40px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3), 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.logo-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.logo-icon {
+  font-size: 32px;
+}
+
+.logo-placeholder h2 {
+  color: var(--primary-color);
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+.login-header h1 {
+  color: var(--text-main);
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.login-header p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Role Toggle Styles */
+.role-toggle {
+  display: flex;
+  position: relative;
+  background: #edf2f7;
+  border-radius: 6px;
+  padding: 4px;
+  margin-bottom: 24px;
+}
+
+.toggle-btn {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-size: 14px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  z-index: 2;
+  transition: color 0.2s ease;
+  border-radius: 4px;
+}
+
+.toggle-btn.active {
+  color: #5b1434;
+}
+
+.toggle-slider {
+  position: absolute;
+  top: 4px;
+  bottom: 4px;
+  width: calc(50% - 6px);
+  background: var(--secondary-color);
+  border-radius: 4px;
+  z-index: 1;
+  transition: left 0.3s ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Form Styles */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.input-group label {
+  color: var(--text-main);
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-wrapper input {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 14px;
+  padding: 10px 14px 10px 40px;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.input-wrapper input::placeholder {
+  color: #a0aec0;
+}
+
+.input-wrapper input:focus {
+  border-color: var(--input-focus);
+}
+
+.input-icon {
+  position: absolute;
+  left: 12px;
+  font-size: 16px;
+  color: var(--text-muted);
+  pointer-events: none;
+}
+
+.form-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 4px;
+}
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 13px;
+  user-select: none;
+}
+
+.remember-me input[type="checkbox"] {
+  accent-color: var(--primary-color);
+  width: 14px;
+  height: 14px;
+  cursor: pointer;
+}
+
+.forgot-password {
+  color: var(--primary-color);
+  font-size: 13px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.submit-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 0 0 2px var(--card-bg), 0 0 0 4px var(--secondary-color);
+}
+
+.login-footer {
+  margin-top: 24px;
+  text-align: center;
+  padding-top: 20px;
+  border-top: 1px solid var(--card-border);
+}
+
+.login-footer p {
+  color: var(--text-muted);
+  font-size: 13px;
+}
+
+.login-footer a {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.login-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .login-card {
+    padding: 30px 20px;
+  }
+}
